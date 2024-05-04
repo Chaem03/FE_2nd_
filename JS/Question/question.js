@@ -4,14 +4,24 @@ const arr = [1, 2, 3, 4, 5, 6, 7];
 const arr2 = [1, [2, 3, [4, 5, 6], 7], [8, 9]];
 
 // Q1-1. arr에서 3출력 (Hint:인덱싱은 0부터 시작!)
+console.log(arr[2]);
 
 // Q1-2. arr에서 [1,2,3]출력 (Hint:Array.js에서 slice함수를 사용해볼까요?)
+const slicedarr = arr.slice(0,3);
 
+console.log(slicedarr);
 // Q1-3. arr2에서 [8, 9]출력 (Hint:배열 안에 원소가 배열일 뿐!)
+
+
+console.log(arr2[2]);
 
 // Q1-4. arr2에서 [4, 5, 6]출력 (Hint:원소안 원소!)
 
+console.log(arr2[1][2]);
+
 console.log("======= 문제 구분선 =======");
+
+
 
 // Q2
 console.log("Q2 객체(JSON)다루기");
@@ -46,14 +56,19 @@ const obj = {
 };
 
 // Q2-1. 멋쨍이사자의 나이를 obj객체로부터 출력하기 (Hint:obj.~~)
-
+console.log(obj.age);
 // Q2-2. 멋쨍이사자의 Computer 학점(A+)을 obj객체로부터 출력하기
+console.log(obj.gpa.Computer);
 
 // Q2-3. 아기사자 나이(21)를 obj객체로부터 출력하기 (Hint:obj안에 배열)
+console.log(obj.friends[0].name);
 
 // Q2-4. 코딩사자가 수강한 강의 중에서 "종합설계"를 obj객체로부터 출력하기
+console.log(obj.friends[1].lecture[1][2]);
 
 console.log("======= 문제 구분선 =======");
+
+
 
 // Q3 map함수, filter함수 활용 (Hint: map, filter함수 구글림!)
 console.log("Q3map함수, filter함수 활용");
@@ -61,9 +76,21 @@ const arr3 = [1, 2, 3, 4, 5, 6];
 
 // Q3-1. map함수와 arr3을 활용하여 [10,20,30,40,50,60]을 출력하시오.
 
+const maparr3 = arr3.map(function(num){
+  return num*10;
+});
+
+console.log(maparr3);
+
 // Q3-2. filter함수와 arr3을 활용하여 [1,3,5]출력하기 (Hint:홀수와 짝수 구분은 "%2"를 활용)
 
 console.log("======= 문제 구분선 =======");
+const maparr3ex2 = arr3.filter(function(num){
+      return num%2==1;
+});
+
+console.log(maparr3ex2);
+
 
 // Q4 함수 & 논리연산자 문제
 console.log("Q4 함수 & 조건문 문제");
@@ -80,6 +107,28 @@ console.log(isLeap(2020));  -> 윤년이 맞습니다.
 console.log(isLeap(2021));  -> 윤년이 아닙니다.
 */
 
+
+function isLeap(year){
+  if((year%4==0 && year%100 !==0) || (year%400==0) ){
+   return true;
+  }
+  else{ 
+ 
+    return false;
+  } 
+
+}
+
+if(isLeap(2020)){
+  console.log("윤년이 맞습니다.");
+}
+else   console.log("윤년이 아닙니다.");
+    
+
+
+
+
+
 console.log("======= 문제 구분선 =======");
 
 // Q5 반복문 연습1
@@ -93,6 +142,16 @@ console.log("Q5 반복문 연습문제1");
 *****
 (Hint:for문 or while문 사용 + console.log("*")사용)
 */
+
+
+for(let i=0; i<5;i++){
+  let line="";
+  for(let j=0; j<=i; j++)
+  {
+line+="*";
+}
+  console.log(line);
+}
 
 console.log("======= 문제 구분선 =======");
 
@@ -108,18 +167,44 @@ console.log("Q6 반복문 연습문제2");
 (Hint:console.log(" ")로 빈칸 표현)
 */
 
+for(let i=0; i<5;i++){
+  let line="";
+  for(let j=-1; j<=5-i-1; j++)
+  {
+line+=" ";
+}
+for(let n=0;n<=i;n++){
+  line+="*";
+}
+  console.log(line);
+}
+
 console.log("======= 문제 구분선 =======");
 
 // Q7 반복문 연습3
 console.log("Q7 반복문 연습문제3");
 /*
 다음을 출력하시오
-    *
-   ***
-  *****
- *******
-*********
+    *  4
+   *** 3
+  ***** 2
+ ******* 1
+********* 0
 (Hint:이중for문 활용)
 */
+
+for(let i=0; i<5;i++){
+  let line="";
+  for(let j=0;j<=5-i-1;j++){
+    line+=" ";
+  }
+  for(let n=1; n<=2*i+1; n++){
+    line+="*";
+  }
+  for(let m=0;m<=5-i-1; m++){
+    line+=" ";
+  }
+  console.log(line);
+}
 
 console.log("고생하셨습니다!!");
