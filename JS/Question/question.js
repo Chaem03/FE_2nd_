@@ -61,7 +61,7 @@ console.log(obj.age);
 console.log(obj.gpa.Computer);
 
 // Q2-3. 아기사자 나이(21)를 obj객체로부터 출력하기 (Hint:obj안에 배열)
-console.log(obj.friends[0].name);
+console.log(obj.friends[0].age);
 
 // Q2-4. 코딩사자가 수강한 강의 중에서 "종합설계"를 obj객체로부터 출력하기
 console.log(obj.friends[1].lecture[1][2]);
@@ -107,7 +107,6 @@ console.log(isLeap(2020));  -> 윤년이 맞습니다.
 console.log(isLeap(2021));  -> 윤년이 아닙니다.
 */
 
-
 function isLeap(year){
   if((year%4==0 && year%100 !==0) || (year%400==0) ){
    return true;
@@ -120,6 +119,11 @@ function isLeap(year){
 }
 
 if(isLeap(2020)){
+  console.log("윤년이 맞습니다.");
+}
+else   console.log("윤년이 아닙니다.");
+    
+if(isLeap(2021)){
   console.log("윤년이 맞습니다.");
 }
 else   console.log("윤년이 아닙니다.");
